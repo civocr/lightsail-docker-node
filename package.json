@@ -1,6 +1,9 @@
 {
   "name": "lightsail-docker-node",
   "packageManager": "yarn@4.1.1",
+  "scripts": { 
+	  "test": ""
+  },
   "dependencies": {
     "express": "^4.19.2"
   }
