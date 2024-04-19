@@ -31,6 +31,9 @@ if [[ $? -ne 0 ]]; then
   exit 1
 fi
 
+echo "Removing existing Docker container"
+docker rm my-container || true
+
 echo "Starting new Docker container with image: $IMAGE_URI"
 
 # Start a new Docker container
