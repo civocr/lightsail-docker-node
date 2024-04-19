@@ -3,6 +3,9 @@ SCRIPT_PATH="$(realpath $0)"
 
 # Print the script path
 echo "This script is located at: $SCRIPT_PATH"
+# Log in to Amazon ECR
+echo "Logging in to Amazon ECR..."
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 533267141943.dkr.ecr.us-east-1.amazonaws.com
 
 # Optionally, to just get the directory and not the script filename:
 SCRIPT_DIR="$(dirname $SCRIPT_PATH)"

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # Get the full path to the script
 SCRIPT_PATH="$(realpath $0)"
 
