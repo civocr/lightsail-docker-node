@@ -14,11 +14,11 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t lightsail-docker-node:$CODEBUILD_RESOLVED_SOURCE_VERSION .
+      - docker build -t 533267141943.dkr.ecr.us-east-1.amazonaws.com/lightsail-docker-node:$CODEBUILD_RESOLVED_SOURCE_VERSION .
   post_build:
     commands:
       - echo Pushing the Docker image to Amazon ECR...
-      - docker push lightsail-docker-node:$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - docker push 533267141943.dkr.ecr.us-east-1.amazonaws.com/lightsail-docker-node:$CODEBUILD_RESOLVED_SOURCE_VERSION
 
 artifacts:
   files:
