@@ -25,7 +25,7 @@ echo "Starting new Docker container with image: $IMAGE_URI"
 
 # Start a new Docker container
 docker run -d --name my-container \
-  -p 80:80 \
+  -p 80:3000 \
   $IMAGE_URI
 
 if [[ $? -eq 0 ]]; then

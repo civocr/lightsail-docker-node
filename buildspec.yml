@@ -14,11 +14,16 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t 533267141943.dkr.ecr.us-east-1.amazonaws.com/lightsail-docker-node:$CODEBUILD_RESOLVED_SOURCE_VERSION .
+      - docker build -t $ECR_REPOSITORY_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION .
+#      - docker build -t 533267141943.dkr.ecr.us-east-1.amazonaws.com/lightsail-docker-node:$CODEBUILD_RESOLVED_SOURCE_VERSION .
   post_build:
     commands:
       - echo Pushing the Docker image to Amazon ECR...
-      - docker push 533267141943.dkr.ecr.us-east-1.amazonaws.com/lightsail-docker-node:$CODEBUILD_RESOLVED_SOURCE_VERSION
+#      - docker push 533267141943.dkr.ecr.us-east-1.amazonaws.com/lightsail-docker-node:$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - docker push $ECR_REPOSITORY_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - echo Writing image definitions file...
+      - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $ECR_REPOSITORY_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION > imagedefinitions.json
+
 
 artifacts:
   files:
