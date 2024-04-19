@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to the imagedefinitions.json file
-JSON_FILE="imagedefinitions.json"
+JSON_FILE="../imagedefinitions.json"
 
 # Extract the Docker image URI using jq
 IMAGE_URI=$(jq -r '.[0].imageUri' $JSON_FILE)
