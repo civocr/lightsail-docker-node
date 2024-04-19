@@ -1,7 +1,14 @@
 #!/bin/bash
+SCRIPT_PATH="$(realpath $0)"
+
+# Print the script path
+echo "This script is located at: $SCRIPT_PATH"
+
+# Optionally, to just get the directory and not the script filename:
+SCRIPT_DIR="$(dirname $SCRIPT_PATH)"
 
 # Path to the imagedefinitions.json file
-JSON_FILE="../imagedefinitions.json"
+JSON_FILE="$SCRIPT_DIR/../imagedefinitions.json"
 
 # Extract the Docker image URI using jq
 IMAGE_URI=$(jq -r '.[0].imageUri' $JSON_FILE)

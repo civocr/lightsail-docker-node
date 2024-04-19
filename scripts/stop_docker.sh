@@ -19,7 +19,7 @@ FILE_NAME="stop_docker.sh"
 FULL_PATH="$SCRIPT_DIR/$FILE_NAME"
 
 # Display the content of the file
-cat "$FULL_PATH"
+#cat "$FULL_PATH"
 
 # Fetch all running container IDs
 CONTAINER_IDS=$(docker ps -aq)
