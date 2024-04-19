@@ -9,12 +9,8 @@ phases:
       - npm install
   pre_build:
     commands:
-      - env
-      - which docker
-      - docker --version
-      - cat /codebuild/output/tmp/script.sh
-      - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 533267141943.dkr.ecr.us-east-1.amazonaws.com)
+      - echo "Running pre-build script..."
+      - ./scripts/prebuild.sh
   build:
     commands:
       - echo Building the Docker image...
