@@ -9,8 +9,6 @@ hooks:
       timeout: 30
       runas: root
   BeforeInstall:
-    - location: scripts/prebuild.sh
-      timeout: 30
       runas: root
     - location: scripts/cleanup.sh
       timeout: 30
